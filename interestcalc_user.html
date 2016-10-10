@@ -1,0 +1,121 @@
+<?php
+   session_start();
+   include('session.php');
+?>
+
+<!DOCTYPE html>
+<html> 
+<head>
+
+
+
+ <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login page</title>
+	
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style_Account.css">
+</head>
+
+	<body data-spy="scroll" data-target=".navbar-collapse">
+	 	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index_banker.html">Retail Banking System</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="inactive"><a href="index_user.html">Home</a></li>
+		
+		<li class="inactive"><a href="ViewAccount.html">View Account</a></li> 
+		<li class="active"><a href="interestcalc.html">Interest Calculator</a></li> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#footer"><span class="glyphicon glyphicon-file"></span> About</a></li>
+        <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<body background="css/Background2.jpg">
+ 
+ 
+	<section class="loginform cf">
+		<form name="login" action="InterestCalc.php" method="POST" accept-charset="utf-8" onsubmit="">
+			<ul>
+				
+
+				  <li>
+					<label for="principal">Principal</label>
+					<input type="number" name="principal" min=300 placeholder="Enter amount in Rupees" required>
+				</li>
+				<li>
+					<label for="interest">Rate</label>
+					<input type="number" name="interest" min=0.001 max=20 step="any" placeholder="Enter interest" required>
+				</li>
+				<li>
+				  <label for="days1">Days</label>
+				  <input type="number" name="days" placeholder="Enter number of days" required>
+				  </li>
+				
+					<input type="submit">
+				</li>
+			</ul>
+		</form>
+	</section>
+	
+<script>
+function datevalid()
+{
+
+  var zy = document.getElementById("bday").value;
+   
+   
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1;
+var yyyy = today.getFullYear();
+alert(today);
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+
+today = yyyy+'-'+mm+'-'+dd;
+
+alert(today);	
+	if(x>today)
+       {alert("Enter valid date;");return true;} 
+else	   
+return false;
+
+}
+
+
+</script>
+
+
+
+</body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="jquery/1.11.0/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as
+needed -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(".contentContainer").css("min-height",$(window).height());
+</script>
+	 
+ 
+</html>
